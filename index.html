@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resistor Color Code Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-gray-800 p-8 rounded-2xl shadow-xl max-w-2xl w-full">
+        <h1 class="text-3xl font-bold text-center mb-4 text-gray-50">Resistor Color Code Calculator</h1>
+        <p class="text-center text-gray-400 mb-8">
+            Select the colors on the resistor bands to calculate its value and tolerance.
+        </p>
+
+        <!-- Resistor Visualizer -->
+        <div class="flex items-center justify-center mb-8">
+            <div class="relative w-[400px]">
+                <div class="resistor-lead left"></div>
+                <div class="resistor-body">
+                    <div id="band-1-visual" class="resistor-band band-1"></div>
+                    <div id="band-2-visual" class="resistor-band band-2"></div>
+                    <div id="band-3-visual" class="resistor-band band-3"></div>
+                    <div id="band-4-visual" class="resistor-band band-4"></div>
+                    <div id="band-5-visual" class="resistor-band band-5"></div>
+                </div>
+                <div class="resistor-lead right"></div>
+            </div>
+        </div>
+
+    
+
+        <!-- Band Selection -->
+        <div class="text-gray-200 text-sm mb-4">
+            <p class="mb-2">Select the colors for each band:</p>
+            <p class="text-gray-400">Note: Band 5 is optional for 4-band resistors.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
+
+            <!-- Band 1 -->
+            <div>
+                <label for="band1" class="block text-sm font-medium text-gray-400 mb-1">Band 1 (Digit)</label>
+                <select id="band1" class="custom-scroll w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 p-3 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50">
+                    <option value="brown">Brown</option>
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="violet">Violet</option>
+                    <option value="grey">Grey</option>
+                    <option value="white">White</option>
+                </select>
+            </div>
+            
+
+            <!-- Band 2 -->
+            <div>
+                <label for="band2" class="block text-sm font-medium text-gray-400 mb-1">Band 2 (Digit)</label>
+                <select id="band2" class="custom-scroll w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 p-3 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50">
+                    <option value="black">Black</option>
+                    <option value="brown">Brown</option>
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="violet">Violet</option>
+                    <option value="grey">Grey</option>
+                    <option value="white">White</option>
+                </select>
+            </div>
+            
+            <!-- Band 3 (Multiplier) -->
+            <div>
+                <label for="band3" class="block text-sm font-medium text-gray-400 mb-1">Band 3 (Multiplier)</label>
+                <select id="band3" class="custom-scroll w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 p-3 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50">
+                    <option value="black">Black</option>
+                    <option value="brown">Brown</option>
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="violet">Violet</option>
+                    <option value="grey">Grey</option>
+                    <option value="white">White</option>
+                    <option value="gold">Gold</option>
+                    <option value="silver">Silver</option>
+                </select>
+            </div>
+            
+            <!-- Band 4 (Tolerance Band) -->
+            <div>
+                <label for="band4" class="block text-sm font-medium text-gray-400 mb-1">Band 4 (Tolerance)</label>
+                <select id="band4" class="custom-scroll w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 p-3 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50">
+                    <option value="brown">Brown</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="violet">Violet</option>
+                    <option value="grey">Grey</option>
+                    <option value="gold">Gold</option>
+                    <option value="silver">Silver</option>
+                </select>
+            </div>
+            
+            <!-- Band 5 (Temperature Coeff.) -->
+            <div>
+                <label for="band5" class="block text-sm font-medium text-gray-400 mb-1">Band 5 (Temp. Coeff.)</label>
+                <select id="band5" class="custom-scroll w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 p-3 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50">
+                    <option value="">None (4-band)</option>
+                    <option value="brown">Brown</option>
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="violet">Violet</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Result Display -->
+        <div id="result" class="bg-gray-700 p-4 rounded-md text-center">
+            <p class="text-xl font-semibold text-gray-50 mb-2">Calculated Resistance:</p>
+            <p id="resistance-value" class="text-3xl font-bold text-indigo-400 mb-1">...</p>
+            <p id="tolerance-value" class="text-lg text-gray-300">...</p>
+            <p id="temp-coeff-value" class="text-lg text-gray-300">...</p>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
