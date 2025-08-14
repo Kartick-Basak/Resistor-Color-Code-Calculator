@@ -12,7 +12,7 @@ This is a simple and interactive web application for calculating the *resistance
 
 - 🫧 **Lightweight:** Built with HTML, CSS, and JavaScript.
 
-## Built With:
+## Built With
 - <img src="https://github.com/Kartick-Basak/Project1/blob/main/Logo/html.webp" alt="logo" width="25" height="25"> HTML
 - <img src="https://github.com/Kartick-Basak/Project1/blob/main/Logo/css.svg" alt="logo" width="25" height="25"> CSS
 - <img src="https://github.com/Kartick-Basak/Project1/blob/main/Logo/Java%20Script.png" width="25" height="25"> Javascript
