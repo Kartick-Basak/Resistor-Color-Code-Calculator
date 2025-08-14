@@ -1,4 +1,4 @@
-## Resistor Color Code Calculator
+## [Resistor Color Code Calculator](https://kartick-basak.github.io/Resistor-Color-Code-Calculator/)
 This is a simple and interactive web application for calculating the *resistance, tolerance, and temperature coefficient* of a resistor based on its color bands. The calculator supports both **4-band and 5-band resistors** and provides a visual representation of the selected colors.
 
 ## Features
@@ -33,3 +33,6 @@ The application relies on the following logic:
 
     - The final calculated resistance, tolerance, and temperature coefficient are then displayed on the page.
 
+### Here is the webpage:
+[Resistor Color Code Calculator](https://kartick-basak.github.io/Resistor-Color-Code-Calculator/)
+[![Alt Text](image-url)](https://destination-url)
